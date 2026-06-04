@@ -15,9 +15,29 @@ public class BookShelf {
         books.addAll(Arrays.asList(booksToAdd));
     }
 
-    public List<Book> arrange() {
+    /*public List<Book> arrange() {
         return books.stream()
                 .sorted()
                 .collect(Collectors.toList());
     }
+
+     */
+
+    /*public List<Book> arrange() {
+        return books.stream().sorted().collect(Collectors.toList());
+    }
+    public List<Book> arrange(Comparator<Book> criteria) {
+        return null;
+    }
+
+     */
+
+    public List<Book> arrange() {
+        return books.stream().sorted().collect(Collectors.toList());
+    }
+    public List<Book> arrange(Comparator<Book> criteria) {
+        return books.stream().sorted(criteria).collect(Collectors.toList());
+    }
+
+
 }

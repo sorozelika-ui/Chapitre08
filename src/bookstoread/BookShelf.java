@@ -1,5 +1,6 @@
 package bookstoread;
 
+import java.time.Year;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -42,4 +43,13 @@ public class BookShelf {
     }
 
 
+    /* public Map<Year, List<Book>> groupByPublicationYear() {
+        return null;
+    }
+
+     */
+    public Map<Year, List<Book>> groupByPublicationYear() {
+        return  books.stream().collect(Collectors.groupingBy(book ->
+                Year.of(book.getPublishedOn().getYear())));
+    }
 }
